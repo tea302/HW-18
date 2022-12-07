@@ -1,11 +1,12 @@
 from flask import Flask
 from flask_restx import Api
-from sqlalchemy.testing import db
+
 
 from config import Config
 from dao.views.director import director_ns
 from dao.views.genre import genre_ns
 from dao.views.movie import movie_ns
+from setup_db import db
 
 
 def create_app(config_obj):
@@ -17,7 +18,7 @@ def create_app(config_obj):
 
 def register_extensions(app):
     api = Api(app)
-    db.init.app(app)
+    db.init_app(app)
     api.add_namespace(movie_ns)
     api.add_namespace(director_ns)
     api.add_namespace(genre_ns)
