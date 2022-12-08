@@ -22,7 +22,7 @@ class MovieService:
     def create(self, movie_d):
         return self.dao.create(movie_d)
 
-    def update(self,movie_d):
+    def update(self, movie_d):
         self.dao.update(movie_d)
         return self.dao
 

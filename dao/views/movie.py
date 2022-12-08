@@ -37,7 +37,7 @@ class MovieView(Resource):
         return result, 200
 
     def put(self, uid):
-        request_json =request.json
+        request_json = request.json
         if "id" not in request_json:
             request_json["id"] = uid
         movie_service.update(request_json)
