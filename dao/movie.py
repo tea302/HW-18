@@ -21,7 +21,7 @@ class MovieDAO:
         return self.session.query(Movie).filter(Movie.year == value).all()
 
     def create(self, movie_d):
-        ent = Movie(*movie_d)
+        ent = Movie(**movie_d)
         self.session.add(ent)
         self.session.commit()
         return ent
